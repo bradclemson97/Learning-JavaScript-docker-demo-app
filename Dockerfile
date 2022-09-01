@@ -1,5 +1,5 @@
 FROM node:13-alpine
-# this image is based on a node image from docker hub
+# our own image is based on a node image from docker hub
 # any linux commands can be used
 
 ENV MONGO_DB_USERNAME=admin \
