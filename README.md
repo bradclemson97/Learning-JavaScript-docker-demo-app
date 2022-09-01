@@ -44,7 +44,7 @@ Step 7: Access you nodejs application UI from browser
 
 ### With Docker Compose
 
-If we have two or more containers we can write all the run commands for the two or more containers in a single docker compose file. 
+As opposed to manually running each command for the containers, as shown above, if we have two or more containers we can write all the run commands for the two or more containers in a single docker compose file. 
 
 #### To start the application
 
