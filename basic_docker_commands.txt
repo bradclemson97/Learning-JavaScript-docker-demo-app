@@ -1,0 +1,28 @@
+## Docker basic commands
+
+$ docker pull redis 	<- this pulls a docker image for redis from the docker hub, redis is an open source key-value stores that stores functions as a data structure server 
+$ docker images 	<- view all existing images you have locally 
+$ docker run redis 	<- create a new container based on an image
+(open a new terminal) $ docker ps 		<- list the ids, names, statuses and ports of all runing containers 
+(back to terminal from which redis was run) 'CTRL C'
+$ docker run -d redis	<- run container in a detacthed mode 
+$ docker stop 'id or name of the container' 	<- restart a container e.g. because of an error  
+$ docker start 'id or name of the container' 	<- re-start a stopped container
+$ docker ps -a 		<- lists all containers which are running AND stopped
+
+With two parallel applications using redis but two different versions (5.0.6 vs 4.0). We would need two containers containing the different images. 
+$ docker run redis:4.0 	<- pulls the specific image and starts the container right away
+CONTAINER port vs HOST port: both containers will open the same port so we need to avoid conflicts... 
+Multiple containers can run on your host machine and the host machine has certain ports available for applications. 
+You must create binding between your host machine port (e.g. 3000) and your container (also 3000) so your application can be reached.
+In this scenario you can have two different containers both listening on port 3000 which is ok as long as they are bound to two different ports from your host machine (one is bound to 3000 and the other 3001).
+$ docker run -d -p3000:3000 redis 	<- using '-p' you specify the port of the host and then secondly the port of the container we are binding to. 
+$ docker run -d -p3001:3000 redis:4.0 	<- now we want to start the second container bound to a different port from our host machine
+$ docker run -d -p3001:3000 --name redis-older redis:4.0 	<- alternatively to create the new container using a specifc name (redis-older)
+
+$ docker logs 'id or name of the container' 	<- debugging: view the logs a container is producing
+$ docker exec -it 'id or name of container' /bin/bash 	<- get inside the terminal of the running container 
+once inside you can view the contents of the home directory and view the contents
+# cd / 
+# ls 
+
