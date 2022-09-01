@@ -74,3 +74,5 @@ We create a docker image to deploy our application to a chosen envrionment.
     docker build -t my-app:1.0 .       
     
 The dot "." at the end of the command denotes location of the Dockerfile. Bceause we are in the same folder as the Dockerfile we use the current directory ('.'). If using Jenkins for CI, Jenkins would build our Docker image based on our Dockerfile. This image would then be pushed to the docker repository to make it available to use - see Workflow_with_docker.PNG
+
+_NOTE: Whenever you adjust the Dockerfile, you MUST rebuild the docker image!_
