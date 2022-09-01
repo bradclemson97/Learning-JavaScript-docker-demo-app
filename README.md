@@ -19,7 +19,7 @@ Step 2: start mongodb
 
     docker run -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password --name mongodb --net mongo-network mongo   
     
-_NOTE: default ports are used for mondodb and mongo-express    
+_NOTE: default ports are used for mondodb and mongo-express_    
     
 Step 3: start mongo-express
     
