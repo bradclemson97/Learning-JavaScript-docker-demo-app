@@ -75,4 +75,8 @@ We create a docker image to deploy our application to a chosen envrionment.
     
 The dot "." at the end of the command denotes location of the Dockerfile. Bceause we are in the same folder as the Dockerfile we use the current directory ('.'). If using Jenkins for CI, Jenkins would build our Docker image based on our Dockerfile. This image would then be pushed to the docker repository to make it available to use - see Workflow_with_docker.PNG
 
-_NOTE: Whenever you adjust the Dockerfile, you MUST rebuild the docker image!_
+_NOTE: Whenever you adjust the Dockerfile, you MUST remove the old image and rebuild!_
+
+To remove a docker image.
+
+    docker rmi 'IMAGE ID' 
