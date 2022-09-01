@@ -4,10 +4,10 @@ FROM node:13-alpine
 ENV MONGO_DB_USERNAME=admin \
     MONGO_DB_PWD=password
 
-# run any linux command which will apply to the container envrionment, this creates the following 'app' folder
+# RUN - run any linux command which will apply to the container envrionment, this creates the following 'app' folder
 RUN mkdir -p /home/app
 
-# this executes on the HOST machine, this copies current folder files to home/app
+# COPY - this executes on the HOST machine, this copies current folder files to home/app
 COPY ./app /home/app
 
 # set default dir so that next commands executes in /home/app dir
