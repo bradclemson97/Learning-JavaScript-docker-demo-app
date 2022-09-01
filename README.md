@@ -69,6 +69,8 @@ Step 5: access the nodejs application from browser
 
 #### To build a docker image from the application
 
+We create a docker image to deploy our application on a chosen envrionment. 
+
     docker build -t my-app:1.0 .       
     
 The dot "." at the end of the command denotes location of the Dockerfile.
