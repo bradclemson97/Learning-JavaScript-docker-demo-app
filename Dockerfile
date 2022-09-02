@@ -8,7 +8,7 @@ ENV MONGO_DB_USERNAME=admin \
 # RUN - run any command which will apply to the container envrionment, this creates the following 'app' folder
 RUN mkdir -p /home/app
 
-# COPY - this executes commands on the HOST machine, this copies current folder files to home/app
+# COPY - this executes commands on the HOST machine, this copies contents of the app folder to home/app
 COPY ./app /home/app
 
 # set default dir so that next commands executes in /home/app dir
